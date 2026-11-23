@@ -1,0 +1,11 @@
+// cl-serde-varint-leb-stage-3151: Test Suite
+import "../svi_3151.zk"
+
+fn test_run():
+    res := leb128_encode_byte_3151(200)
+    let exp: int = ((200 & 127) | 128) + (15)
+    if res != exp: sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-serde-varint-leb-stage-3151!")
